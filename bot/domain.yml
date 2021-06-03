@@ -1,0 +1,59 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - game_start
+  - game_question
+  - game_answer
+
+responses:
+  utter_greet:
+  - text: "Hey! Como você está?"
+
+  utter_cheer_up:
+  - text: "Aqui algo para te animar:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Isso te ajudou?"
+
+  utter_happy:
+  - text: "Otimo, siga em frente!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_game_start:
+  - text: "Vamos começar!"
+
+  utter_game_question:
+  - text: "Qual o nome do diagrama de conjuntos"
+
+  utter_game_answer:
+  - text: "sua resposta está correta"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+forms:
+  response_form:
+    quiz_response:
+      - type: from_intent
+      - intent: game_answer
+
+slots:
+  quiz_response:
+    - type: categorical
+    - values: A
+              B
+              C

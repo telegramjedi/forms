@@ -1,0 +1,30 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Activate form
+	steps:
+	- intent: game_answer
+	- action: response_form
+	- active_loop: response_form
+
+- rule: Submit form
+	condition:
+	- activate_loop: response_form
+	steps:
+	- action: name_form
+	- active_loop: null
+	- slot_was_set:
+		- requested_slot: null
+	- action: utter_game_answer ###Talvez aqui você precise chamar o código Python que verifica se foi A, B, ou C e se a resposta está correta, etc...
+	

@@ -1,0 +1,80 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - oi
+    - ola
+    - bom dia
+    - boa tarde
+    - boa noite
+
+
+- intent: goodbye
+  examples: |
+    - boa tarde
+    - ate
+    - tchau
+
+- intent: affirm
+  examples: |
+    - sim
+    - s
+    - claro
+    - bom
+    - correto
+
+- intent: deny
+  examples: |
+    - nao
+    - n
+    - nunca
+    - acho que nao
+    - sem chance
+
+- intent: mood_great
+  examples: |
+    - perfeito
+    - otimo
+    - incrivel
+
+
+- intent: mood_unhappy
+  examples: |
+    - meu dia foi horrivel
+    - estou triste
+    - triste
+    - infeliz
+
+
+- intent: bot_challenge
+  examples: |
+    - você é um bot?
+
+- intent: game_start
+  examples: |
+    - eu quero jogar um jogo
+    - jogar
+    - jogar quiz
+    - eu quero iniciar o quiz
+    - iniciar o quiz
+    - quiz
+    - game
+
+  
+- intent: game_answer
+  examples: |
+    - a
+    - acho que é a
+    - talvez a
+    - resposta a
+    - b
+    - acho que é a b
+    - talvez b
+    - resposta b
+    - c
+    - acho que é a c
+    - talvez c
+    - resposta c
+    
+
